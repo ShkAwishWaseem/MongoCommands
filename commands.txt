@@ -1,0 +1,81 @@
+dataBase Commands:
+
+shows dbs
+use dbName
+db.dropDatabase()
+db
+
+
+Collection Commands / Table Commands
+
+show collections
+db.createCollection('name')
+db.<collectionName>.drop();
+
+
+Document / Rows Commands:
+
+For Single Row:
+
+db.<collectionName>.insert({
+    'name': 'Harry',
+    'language' : 'python',
+    'favouriteSports': ['football', 'cricket', 'swimming'] 
+})
+
+For Multiple Rows:
+db.<collectionName>.insertMany([
+    {
+    'name': 'Harry',
+    'language' : 'python',
+    'favouriteSports': ['football', 'cricket', 'swimming'] 
+},
+{
+    'name': 'Awish',
+    'language' : 'JavaScript',
+    'favouriteSports': ['football', 'cricket', 'swimming'] 
+},
+{
+    'name': 'John Doe',
+    'language' : 'C',
+    'favouriteSports': ['horseRiding', 'cricket', 'swimming'] 
+}
+])
+
+
+
+Show all rows in a Single Collection:
+
+db.<collectionName>.find()
+db.<collectionName>.find().pretty()  (In Formatted version)
+
+search for  a Particular Object in a Row
+
+db.<collectionName>.find()
+
+
+This is Channing
+db.<collectionName>.find().limit(1).pretty();
+
+
+To print the number of count of rows in Output:
+db.<collectionName>.find().count()
+
+
+sort() 
+findOne()
+Update a Row
+db.post.update()
+
+
+db.post.update({name:'Larry'},
+{
+    'name': 'Larry_1',
+    'language': 'Java',
+    'favouriteSports': [ 'horseRiding' ]
+},{upsert:true})
+
+
+
+MongoDB Rename Operator:
+
